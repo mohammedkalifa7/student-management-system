@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Student Login | EduManage</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+
+</head>
+
+<body class="login-page">
+
+
+<div class="modern-login-container">
+
+
+    <!-- LEFT SIDE -->
+
+    <div class="login-info-panel">
+
+
+        <div class="login-brand">
+
+            <div class="brand-icon">
+                🎓
+            </div>
+
+
+            <div>
+
+                <h1>EduManage</h1>
+
+                <p>
+                    Smart Student Management System
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="login-info-content">
+
+
+            <p class="portal-label">
+                STUDENT PORTAL
+            </p>
+
+
+            <h2>
+                Your Academic Journey,
+                <br>
+                All in One Place.
+            </h2>
+
+
+            <p>
+                Access your attendance, results, subjects,
+                timetable, fee details and academic requests
+                through one secure student portal.
+            </p>
+
+
+
+            <div class="login-features">
+
+
+                <div>
+                    <span>📊</span>
+                    <p>Track Attendance</p>
+                </div>
+
+
+                <div>
+                    <span>📝</span>
+                    <p>View Results</p>
+                </div>
+
+
+                <div>
+                    <span>📅</span>
+                    <p>View Timetable</p>
+                </div>
+
+
+                <div>
+                    <span>📩</span>
+                    <p>OD & Permission</p>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="login-footer-text">
+
+            © 2026 EduManage Student Management System
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="login-form-panel">
+
+
+        <div class="login-form-container">
+
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+
+                ← Back to Home
+
+            </a>
+
+
+
+            <div class="login-heading">
+
+
+                <div class="login-avatar">
+                    👨‍🎓
+                </div>
+
+
+                <p class="portal-label">
+                    STUDENT ACCESS
+                </p>
+
+
+                <h2>
+                    Welcome Back!
+                </h2>
+
+
+                <p>
+                    Enter your Student ID and password
+                    to access your student portal.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- LOGIN FORM -->
+
+            <div class="modern-login-form">
+
+
+                <label for="studentId">
+
+                    Student ID
+
+                </label>
+
+
+                <div class="input-wrapper">
+
+
+                    <span>
+                        🪪
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        placeholder="Enter Student ID"
+                        autocomplete="username"
+                    >
+
+
+                </div>
+
+
+
+                <label for="studentPassword">
+
+                    Password
+
+                </label>
+
+
+                <div class="input-wrapper">
+
+
+                    <span>
+                        🔒
+                    </span>
+
+
+                    <input
+                        type="password"
+                        id="studentPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        onclick="toggleStudentPassword()"
+                    >
+
+                        👁️
+
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="login-options">
+
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberStudent"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        onclick="forgotStudentPassword(); return false;"
+                    >
+
+                        Forgot Password?
+
+                    </a>
+
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="modern-login-btn"
+                    onclick="studentLogin()"
+                >
+
+                    <span>
+                        Login to Student Portal
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <p
+                    id="studentLoginMessage"
+                    class="login-message"
+                ></p>
+
+
+            </div>
+
+
+
+            <!-- DEMO LOGIN -->
+
+            <div class="demo-login">
+
+
+                <p>
+                    🔐 Demo Student Account
+                </p>
+
+
+                <div>
+
+                    <span>
+                        Student ID:
+                        <strong>192411078</strong>
+                    </span>
+
+
+                    <span>
+                        Password:
+                        <strong>student123</strong>
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- OTHER PORTALS -->
+
+            <div class="other-portals">
+
+
+                <p>
+                    Not a student?
+                </p>
+
+
+                <div>
+
+
+                    <a href="faculty-login.html">
+
+                        👨‍🏫 Faculty Portal
+
+                    </a>
+
+
+                    <a href="admin-login.html">
+
+                        👨‍💼 Admin Portal
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

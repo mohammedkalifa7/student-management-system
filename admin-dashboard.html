@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Admin Dashboard | EduManage</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-layout">
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+
+    <div class="sidebar-logo">
+
+        🎓 EduManage
+
+    </div>
+
+
+    <div class="sidebar-profile">
+
+        <h3>
+            Administrator
+        </h3>
+
+        <p>
+            System Control Panel
+        </p>
+
+    </div>
+
+
+    <div class="admin-menu">
+
+
+        <button
+            class="admin-active"
+            onclick="showAdminSection('admin-home', this)"
+        >
+            🏠 Dashboard
+        </button>
+
+
+        <button
+            onclick="showAdminSection('admin-students', this)"
+        >
+            👨‍🎓 Manage Students
+        </button>
+
+
+        <button
+            onclick="showAdminSection('admin-faculty', this)"
+        >
+            👨‍🏫 Manage Faculty
+        </button>
+
+
+        <button
+            onclick="showAdminSection('admin-od', this)"
+        >
+            📩 OD Requests
+        </button>
+
+
+        <button
+            onclick="showAdminSection('admin-permission', this)"
+        >
+            🎫 Permission Requests
+        </button>
+
+
+        <button
+            onclick="showAdminSection('admin-events', this)"
+        >
+            🎉 Event Requests
+        </button>
+
+
+        <button
+            onclick="showAdminSection('admin-discipline', this)"
+        >
+            ⚠️ Discipline Issues
+        </button>
+
+
+        <button
+            onclick="showAdminSection('admin-users', this)"
+        >
+            🟢 Active Users
+        </button>
+
+
+        <button
+            class="logout-btn"
+            onclick="logoutUser()"
+        >
+            🚪 Logout
+        </button>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="dashboard-main">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="dashboard-header">
+
+
+        <div>
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Complete control over the EduManage system.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-user">
+
+            👨‍💼 Administrator
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= DASHBOARD HOME ================= -->
+
+    <section
+        id="admin-home"
+        class="admin-section"
+        style="display: block;"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                SYSTEM OVERVIEW
+            </p>
+
+            <h2>
+                Welcome, Administrator
+            </h2>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="stat-card">
+
+                <p>
+                    👨‍🎓 Total Students
+                </p>
+
+                <h2 id="adminStudentCount">
+                    1
+                </h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>
+                    👨‍🏫 Total Faculty
+                </p>
+
+                <h2>
+                    1
+                </h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>
+                    📩 Pending OD Requests
+                </p>
+
+                <h2 id="adminPendingOD">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>
+                    🟢 Active Users
+                </p>
+
+                <h2 id="activeUserCount">
+                    0
+                </h2>
+
+            </div>
+
+
+        </div>
+
+
+        <br>
+
+
+        <div class="content-card">
+
+
+            <div class="section-heading">
+
+                <p>
+                    ADMINISTRATION
+                </p>
+
+                <h2>
+                    System Control
+                </h2>
+
+            </div>
+
+
+            <p>
+                Use this administration portal to manage students,
+                faculty, requests, permissions, events, disciplinary
+                issues and user access.
+            </p>
+
+
+            <br>
+
+
+            <p>
+                You can also block a student account. A blocked student
+                will not be able to log in to the Student Portal.
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= MANAGE STUDENTS ================= -->
+
+    <section
+        id="admin-students"
+        class="admin-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                STUDENT MANAGEMENT
+            </p>
+
+            <h2>
+                Manage Students
+            </h2>
+
+        </div>
+
+
+        <div class="content-card">
+
+
+            <div class="table-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Year</th>
+                            <th>Portal Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="adminStudentsTable">
+
+                        <!-- Students load here -->
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= MANAGE FACULTY ================= -->
+
+    <section
+        id="admin-faculty"
+        class="admin-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                FACULTY MANAGEMENT
+            </p>
+
+            <h2>
+                Manage Faculty
+            </h2>
+
+        </div>
+
+
+        <div class="content-card">
+
+
+            <div class="table-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Faculty ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Portal Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>FAC001</td>
+                            <td>Faculty Member</td>
+                            <td>CSE</td>
+                            <td>
+                                <span class="status-approved">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= OD REQUESTS ================= -->
+
+    <section
+        id="admin-od"
+        class="admin-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                ON DUTY MANAGEMENT
+            </p>
+
+            <h2>
+                OD Requests
+            </h2>
+
+        </div>
+
+
+        <div id="adminODRequests">
+
+            <!-- OD requests load here -->
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= PERMISSION REQUESTS ================= -->
+
+    <section
+        id="admin-permission"
+        class="admin-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                STUDENT REQUESTS
+            </p>
+
+            <h2>
+                Permission Requests
+            </h2>
+
+        </div>
+
+
+        <div id="adminPermissionRequests">
+
+            <!-- Permission requests load here -->
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= EVENT REQUESTS ================= -->
+
+    <section
+        id="admin-events"
+        class="admin-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                EVENT MANAGEMENT
+            </p>
+
+            <h2>
+                Faculty Event Requests
+            </h2>
+
+        </div>
+
+
+        <div id="adminEventRequests">
+
+            <!-- Event requests load here -->
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= DISCIPLINE ISSUES ================= -->
+
+    <section
+        id="admin-discipline"
+        class="admin-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                STUDENT DISCIPLINE
+            </p>
+
+            <h2>
+                Discipline Reports
+            </h2>
+
+        </div>
+
+
+        <div id="adminDisciplineReports">
+
+            <!-- Discipline reports load here -->
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= ACTIVE USERS ================= -->
+
+    <section
+        id="admin-users"
+        class="admin-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                USER ACTIVITY
+            </p>
+
+            <h2>
+                Active / Inactive Users
+            </h2>
+
+        </div>
+
+
+        <div class="content-card">
+
+
+            <div class="table-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>User</th>
+                            <th>User ID</th>
+                            <th>Role</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="userStatusTable">
+
+                        <!-- User activity loads here -->
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

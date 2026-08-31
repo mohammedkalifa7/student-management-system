@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Faculty Dashboard | EduManage</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-layout">
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+
+    <div class="sidebar-logo">
+
+        🎓 EduManage
+
+    </div>
+
+
+    <div class="sidebar-profile">
+
+        <h3>
+            Faculty Portal
+        </h3>
+
+        <p>
+            Academic Management
+        </p>
+
+    </div>
+
+
+    <div class="faculty-menu">
+
+
+        <button
+            class="faculty-active"
+            onclick="showFacultySection('faculty-home', this)"
+        >
+            🏠 Dashboard
+        </button>
+
+
+        <button
+            onclick="showFacultySection('faculty-attendance', this)"
+        >
+            📅 Mark Attendance
+        </button>
+
+
+        <button
+            onclick="showFacultySection('faculty-results', this)"
+        >
+            📝 Enter Results
+        </button>
+
+
+        <button
+            onclick="showFacultySection('faculty-od', this)"
+        >
+            📩 OD Requests
+        </button>
+
+
+        <button
+            onclick="showFacultySection('faculty-discipline', this)"
+        >
+            ⚠️ Discipline Issues
+        </button>
+
+
+        <button
+            onclick="showFacultySection('faculty-event', this)"
+        >
+            🎉 Event Permission
+        </button>
+
+
+        <button
+            class="logout-btn"
+            onclick="logoutUser()"
+        >
+            🚪 Logout
+        </button>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="dashboard-main">
+
+
+    <!-- HEADER -->
+
+    <div class="dashboard-header">
+
+
+        <div>
+
+            <h1>
+                Faculty Dashboard
+            </h1>
+
+            <p>
+                Manage your students and academic activities.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            👨‍🏫 Faculty Portal
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= DASHBOARD HOME ================= -->
+
+    <section
+        id="faculty-home"
+        class="faculty-section"
+        style="display: block;"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                OVERVIEW
+            </p>
+
+            <h2>
+                Faculty Dashboard
+            </h2>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="stat-card">
+
+                <p>
+                    👨‍🎓 Total Students
+                </p>
+
+                <h2>
+                    1
+                </h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>
+                    📩 Pending OD
+                </p>
+
+                <h2 id="facultyPendingOD">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>
+                    📝 Results Entered
+                </p>
+
+                <h2>
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>
+                    🟢 Portal Status
+                </p>
+
+                <h2>
+                    Active
+                </h2>
+
+            </div>
+
+
+        </div>
+
+
+        <br>
+
+
+        <div class="content-card">
+
+
+            <div class="section-heading">
+
+                <p>
+                    QUICK INFORMATION
+                </p>
+
+                <h2>
+                    Faculty Access
+                </h2>
+
+            </div>
+
+
+            <p>
+                From this portal you can mark student attendance,
+                enter examination marks, approve or reject OD
+                requests and report disciplinary issues.
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= ATTENDANCE ================= -->
+
+    <section
+        id="faculty-attendance"
+        class="faculty-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                ATTENDANCE MANAGEMENT
+            </p>
+
+            <h2>
+                Mark Student Attendance
+            </h2>
+
+        </div>
+
+
+        <div class="content-card">
+
+
+            <div class="form-card">
+
+
+                <label for="attendanceStudent">
+
+                    Select Student
+
+                </label>
+
+
+                <select id="attendanceStudent">
+
+                    <option value="192411078">
+                        192411078 - Mohammed Kalifa
+                    </option>
+
+                </select>
+
+
+                <label for="attendanceDate">
+
+                    Attendance Date
+
+                </label>
+
+
+                <input
+                    type="date"
+                    id="attendanceDate"
+                >
+
+
+                <label for="attendanceStatus">
+
+                    Attendance Status
+
+                </label>
+
+
+                <select id="attendanceStatus">
+
+                    <option value="Present">
+                        Present
+                    </option>
+
+                    <option value="Absent">
+                        Absent
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="button"
+                    class="primary-action-btn"
+                    onclick="markAttendance()"
+                >
+
+                    📅 Save Attendance
+
+                </button>
+
+
+                <p id="attendanceMessage"></p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <br>
+
+
+        <div class="content-card">
+
+
+            <h3>
+                Attendance Records
+            </h3>
+
+
+            <br>
+
+
+            <div
+                id="facultyAttendanceRecords"
+            >
+
+                <!-- Attendance records appear here -->
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= RESULTS ================= -->
+
+    <section
+        id="faculty-results"
+        class="faculty-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                EXAMINATION MANAGEMENT
+            </p>
+
+            <h2>
+                Enter Student Result
+            </h2>
+
+        </div>
+
+
+        <div class="content-card">
+
+
+            <div class="form-card">
+
+
+                <label for="resultStudent">
+
+                    Select Student
+
+                </label>
+
+
+                <select id="resultStudent">
+
+                    <option value="192411078">
+                        192411078 - Mohammed Kalifa
+                    </option>
+
+                </select>
+
+
+                <label for="resultSubject">
+
+                    Select Subject
+
+                </label>
+
+
+                <select id="resultSubject">
+
+                    <option value="Artificial Intelligence">
+                        Artificial Intelligence
+                    </option>
+
+                    <option value="DBMS">
+                        Database Management Systems
+                    </option>
+
+                    <option value="Computer Networks">
+                        Computer Networks
+                    </option>
+
+                    <option value="Software Engineering">
+                        Software Engineering
+                    </option>
+
+                    <option value="Operating Systems">
+                        Operating Systems
+                    </option>
+
+                    <option value="Web Technologies">
+                        Web Technologies
+                    </option>
+
+                </select>
+
+
+                <label for="studentMarks">
+
+                    Marks
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="studentMarks"
+                    placeholder="Enter marks"
+                    min="0"
+                    max="100"
+                >
+
+
+                <button
+                    type="button"
+                    class="primary-action-btn"
+                    onclick="submitResult()"
+                >
+
+                    📝 Publish Result
+
+                </button>
+
+
+                <p id="resultMessage"></p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= OD REQUESTS ================= -->
+
+    <section
+        id="faculty-od"
+        class="faculty-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                ON DUTY MANAGEMENT
+            </p>
+
+            <h2>
+                Student OD Requests
+            </h2>
+
+        </div>
+
+
+        <div
+            id="facultyODRequests"
+        >
+
+            <!-- OD requests appear here -->
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= DISCIPLINE ================= -->
+
+    <section
+        id="faculty-discipline"
+        class="faculty-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                STUDENT DISCIPLINE
+            </p>
+
+            <h2>
+                Report Discipline Issue
+            </h2>
+
+        </div>
+
+
+        <div class="content-card">
+
+
+            <div class="form-card">
+
+
+                <label for="disciplineStudent">
+
+                    Select Student
+
+                </label>
+
+
+                <select id="disciplineStudent">
+
+                    <option value="192411078">
+                        192411078 - Mohammed Kalifa
+                    </option>
+
+                </select>
+
+
+                <label for="disciplineIssue">
+
+                    Discipline Issue
+
+                </label>
+
+
+                <textarea
+                    id="disciplineIssue"
+                    rows="6"
+                    placeholder="Describe the disciplinary issue..."
+                ></textarea>
+
+
+                <button
+                    type="button"
+                    class="primary-action-btn"
+                    onclick="submitDisciplineIssue()"
+                >
+
+                    ⚠️ Submit Report
+
+                </button>
+
+
+                <p id="disciplineMessage"></p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= EVENT PERMISSION ================= -->
+
+    <section
+        id="faculty-event"
+        class="faculty-section"
+    >
+
+
+        <div class="section-heading">
+
+            <p>
+                EVENT MANAGEMENT
+            </p>
+
+            <h2>
+                Request Event Permission
+            </h2>
+
+        </div>
+
+
+        <div class="content-card">
+
+
+            <div class="form-card">
+
+
+                <label for="eventName">
+
+                    Event Name
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="eventName"
+                    placeholder="Enter event name"
+                >
+
+
+                <label for="eventDate">
+
+                    Event Date
+
+                </label>
+
+
+                <input
+                    type="date"
+                    id="eventDate"
+                >
+
+
+                <label for="eventDescription">
+
+                    Event Description
+
+                </label>
+
+
+                <textarea
+                    id="eventDescription"
+                    rows="6"
+                    placeholder="Describe the event and request..."
+                ></textarea>
+
+
+                <button
+                    type="button"
+                    class="primary-action-btn"
+                    onclick="submitEventRequest()"
+                >
+
+                    🎉 Send Permission Request
+
+                </button>
+
+
+                <p id="eventMessage"></p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
