@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Faculty Login | EduManage</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+```
+
+</head>
+
+<body class="login-page">
+
+```
+<div class="modern-login-container">
+
+
+    <!-- LEFT SIDE -->
+
+    <div class="login-info-panel">
+
+
+        <div class="login-brand">
+
+            <div class="brand-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h1>EduManage</h1>
+
+                <p>
+                    Smart Student Management System
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="login-info-content">
+
+
+            <p class="portal-label">
+                FACULTY PORTAL
+            </p>
+
+
+            <h2>
+                Manage Your Students,
+                <br>
+                All in One Place.
+            </h2>
+
+
+            <p>
+                Manage student attendance, enter results,
+                approve OD requests, report disciplinary issues
+                and handle academic activities securely.
+            </p>
+
+
+            <div class="login-features">
+
+                <div>
+                    <span>📅</span>
+                    <p>Mark Attendance</p>
+                </div>
+
+                <div>
+                    <span>📝</span>
+                    <p>Enter Results</p>
+                </div>
+
+                <div>
+                    <span>📩</span>
+                    <p>Approve OD Requests</p>
+                </div>
+
+                <div>
+                    <span>⚠️</span>
+                    <p>Manage Discipline</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="login-footer-text">
+
+            © 2026 EduManage Student Management System
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="login-form-panel">
+
+
+        <div class="login-form-container">
+
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+                ← Back to Home
+            </a>
+
+
+            <div class="login-heading">
+
+
+                <div class="login-avatar">
+                    👨‍🏫
+                </div>
+
+
+                <p class="portal-label">
+                    FACULTY ACCESS
+                </p>
+
+
+                <h2>
+                    Welcome Back!
+                </h2>
+
+
+                <p>
+                    Enter your Faculty ID and password
+                    to access the faculty portal.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- LOGIN FORM -->
+
+            <div class="modern-login-form">
+
+
+                <label for="facultyId">
+                    Faculty ID
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <span>
+                        🪪
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="facultyId"
+                        placeholder="Enter Faculty ID"
+                        autocomplete="username"
+                    >
+
+                </div>
+
+
+
+                <label for="facultyPassword">
+                    Password
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <span>
+                        🔒
+                    </span>
+
+
+                    <input
+                        type="password"
+                        id="facultyPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        onclick="toggleFacultyPassword()"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+
+
+                <div class="login-options">
+
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberFaculty"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        onclick="forgotFacultyPassword(); return false;"
+                    >
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="modern-login-btn"
+                    onclick="facultyLogin()"
+                >
+
+                    <span>
+                        Login to Faculty Portal
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <p
+                    id="facultyLoginMessage"
+                    class="login-message"
+                ></p>
+
+
+            </div>
+
+
+
+            <!-- DEMO LOGIN -->
+
+            <div class="demo-login">
+
+
+                <p>
+                    🔐 Demo Faculty Account
+                </p>
+
+
+                <div>
+
+                    <span>
+                        Faculty ID:
+                        <strong>FAC001</strong>
+                    </span>
+
+
+                    <span>
+                        Password:
+                        <strong>faculty123</strong>
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- OTHER PORTALS -->
+
+            <div class="other-portals">
+
+
+                <p>
+                    Access another portal?
+                </p>
+
+
+                <div>
+
+                    <a href="student-login.html">
+                        👨‍🎓 Student Portal
+                    </a>
+
+
+                    <a href="admin-login.html">
+                        👨‍💼 Admin Portal
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+```
+
+</body>
+
+</html>
